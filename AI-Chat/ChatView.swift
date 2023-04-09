@@ -18,7 +18,7 @@ struct ChatView: View {
     @State private var inputText = ""
     @State private var chatHistory: [Message] = []
 
-    private var chatClient = OpenAISwift(authToken: "your api key")
+    private var chatClient = OpenAISwift(authToken: "your API key")
 
     var body: some View {
         VStack {
@@ -56,7 +56,7 @@ struct ChatView: View {
                 TextField("Type your message here...", text: $inputText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
-                Button(action: sendMessage) {
+                Button(action: send) {
                     Text("Send")
                 }
                 .padding(.trailing)
@@ -65,25 +65,42 @@ struct ChatView: View {
             .navigationTitle("Chat")
         }
     }
+    
+    func send() {
+        Task {
+            await sendMessage()
+        }
+    }
 
-    func sendMessage() {
+    // メッセージ送信
+    func sendMessage() async {
         if inputText.isEmpty { return }
 
+        // chatHistoryに、ユーザーのメッセージを追加
         chatHistory.append(Message(text: inputText, isUserMessage: true))
+        self.inputText = ""
 
-        chatClient.sendCompletion(with: inputText, maxTokens: 500, completionHandler: { result in
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
-                    let output = model.choices?.first?.text ?? ""
-                    chatHistory.append(Message(text: output, isUserMessage: false))
-                    self.inputText = ""
+        // APIに質問を送
+        do {
+            // チャットメッセージを作成
+            var chat: [ChatMessage] = [ChatMessage(role: .system, content: "あなたはとても優秀なアシスタントです。")]
+            chatHistory.forEach { history in
+                var role = ChatRole.assistant
+                if (history.isUserMessage) {
+                    role = ChatRole.user
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
-                break
+                chat.append(ChatMessage(role: role, content: history.text))
             }
-        })
+             
+            
+            let result = try await chatClient.sendChat(with: chat)
+            if let returnMessage = result.choices?[0].message.content {
+                chatHistory.append(Message(text: returnMessage, isUserMessage: false))
+            }
+            // use result
+        } catch {
+            // ...
+        }
     }
 }
 
