@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4595BEC529E2E46800B3214F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		45F0828A29E29E3B00B26CEE /* AI-Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI-Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F0828D29E29E3B00B26CEE /* AI_ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI_ChatApp.swift; sourceTree = "<group>"; };
 		45F0828F29E29E3B00B26CEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		45F0828C29E29E3B00B26CEE /* AI-Chat */ = {
 			isa = PBXGroup;
 			children = (
+				4595BEC529E2E46800B3214F /* Info.plist */,
 				45F0828D29E29E3B00B26CEE /* AI_ChatApp.swift */,
 				45F0828F29E29E3B00B26CEE /* ContentView.swift */,
 				45F0829B29E2A1C700B26CEE /* MenuView.swift */,
@@ -286,9 +288,9 @@
 				DEVELOPMENT_TEAM = 6YH92R28ZR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AI-Chat/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
@@ -316,9 +318,9 @@
 				DEVELOPMENT_TEAM = 6YH92R28ZR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AI-Chat/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;

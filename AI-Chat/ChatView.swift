@@ -31,13 +31,13 @@ struct ChatView: View {
                                 Text(message.text)
                                     .padding(8)
                                     .foregroundColor(.white)
-                                    .background(Color(red: 0.0, green: 0.0, blue: 0.6))
+                                    .background(Color(red: 52/255, green: 53/255, blue: 64/255))
                                     .cornerRadius(8)
                             } else {
                                 Text(message.text.replacingOccurrences(of: "\n\n", with: ""))
                                     .padding(8)
                                     .foregroundColor(.white)
-                                    .background(Color(red: 0.0, green: 0.4, blue: 0.0))
+                                    .background(Color(red: 54/255, green: 70/255, blue: 62/255))
                                     .cornerRadius(8)
                                 Spacer()
                             }

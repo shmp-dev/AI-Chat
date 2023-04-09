@@ -12,6 +12,11 @@ struct AI_ChatApp: App {
     var body: some Scene {
         WindowGroup {
             MenuView()
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    // スプラッシュ画面が表示された後に、アプリのメイン画面に遷移する処理
+                }
+            }
         }
     }
 }
