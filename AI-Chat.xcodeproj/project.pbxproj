@@ -11,14 +11,20 @@
 		45F0829029E29E3B00B26CEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0828F29E29E3B00B26CEE /* ContentView.swift */; };
 		45F0829229E29E3C00B26CEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F0829129E29E3C00B26CEE /* Assets.xcassets */; };
 		45F0829529E29E3C00B26CEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45F0829429E29E3C00B26CEE /* Preview Assets.xcassets */; };
+		45F0829C29E2A1C700B26CEE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0829B29E2A1C700B26CEE /* MenuView.swift */; };
+		45F0829E29E2A23200B26CEE /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F0829D29E2A23200B26CEE /* ChatView.swift */; };
+		45F082A129E2A2CD00B26CEE /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45F082A029E2A2CD00B26CEE /* OpenAISwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4595BEC529E2E46800B3214F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		45F0828A29E29E3B00B26CEE /* AI-Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AI-Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45F0828D29E29E3B00B26CEE /* AI_ChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI_ChatApp.swift; sourceTree = "<group>"; };
 		45F0828F29E29E3B00B26CEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		45F0829129E29E3C00B26CEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45F0829429E29E3C00B26CEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		45F0829B29E2A1C700B26CEE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		45F0829D29E2A23200B26CEE /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F082A129E2A2CD00B26CEE /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +58,11 @@
 		45F0828C29E29E3B00B26CEE /* AI-Chat */ = {
 			isa = PBXGroup;
 			children = (
+				4595BEC529E2E46800B3214F /* Info.plist */,
 				45F0828D29E29E3B00B26CEE /* AI_ChatApp.swift */,
 				45F0828F29E29E3B00B26CEE /* ContentView.swift */,
+				45F0829B29E2A1C700B26CEE /* MenuView.swift */,
+				45F0829D29E2A23200B26CEE /* ChatView.swift */,
 				45F0829129E29E3C00B26CEE /* Assets.xcassets */,
 				45F0829329E29E3C00B26CEE /* Preview Content */,
 			);
@@ -83,6 +93,9 @@
 			dependencies = (
 			);
 			name = "AI-Chat";
+			packageProductDependencies = (
+				45F082A029E2A2CD00B26CEE /* OpenAISwift */,
+			);
 			productName = "AI-Chat";
 			productReference = 45F0828A29E29E3B00B26CEE /* AI-Chat.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 45F0828129E29E3B00B26CEE;
+			packageReferences = (
+				45F0829F29E2A2CD00B26CEE /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 45F0828B29E29E3B00B26CEE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F0829E29E2A23200B26CEE /* ChatView.swift in Sources */,
 				45F0829029E29E3B00B26CEE /* ContentView.swift in Sources */,
+				45F0829C29E2A1C700B26CEE /* MenuView.swift in Sources */,
 				45F0828E29E29E3B00B26CEE /* AI_ChatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,11 +288,12 @@
 				DEVELOPMENT_TEAM = 6YH92R28ZR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AI-Chat/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +318,12 @@
 				DEVELOPMENT_TEAM = 6YH92R28ZR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AI-Chat/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45F0829F29E2A2CD00B26CEE /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45F082A029E2A2CD00B26CEE /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45F0829F29E2A2CD00B26CEE /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45F0828229E29E3B00B26CEE /* Project object */;
 }
