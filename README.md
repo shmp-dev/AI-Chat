@@ -7,3 +7,6 @@ GPTとチャット形式で自然なやり取りをすることができます�
 
 # 起動
 ![start](https://github.com/shmp-dev/AI-Chat/assets/128882665/b7981e33-754f-4f1f-b3c3-b7b1b2fb9438)
+
+# チャット画面
+![chat](https://github.com/shmp-dev/AI-Chat/assets/128882665/343f1ae0-f40e-41a8-8acd-407934af9f84)
